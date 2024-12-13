@@ -1,0 +1,33 @@
+#Open AWS CloudShell
+
+#install elastic-blast
+[ -d .elb-venv ] && rm -fr .elb-venv
+python3 -m venv .elb-venv
+source .elb-venv/bin/activate
+pip install elastic-blast
+
+#confirm it was installed
+elastic-blast --version
+
+#autoshutdown
+aws-create-elastic-blast-janitor-role.sh
+
+#Setup an Output Bucket; Confirm then make; I just go to S3
+#aws s3 mb s3://biodiverse/elastic-blast/
+#aws s3 ls s3://biodiverse/elastic-blast/
+
+#Upload your FASTA file into S3
+
+#Validate your query file can be read
+aws s3 ls s3://biodiverse/Input/query.fasta
+
+#Create a text file - Example biodiverse_eblast.ini file
+
+#Upload the text file to your Cloudshell working directory
+
+#Submit the BLAST
+elastic-blast submit --cfg biodiverse_eblast.ini
+
+
+#BLAST command line options: https://www.ncbi.nlm.nih.gov/books/NBK279684/table/appendices.T.options_common_to_all_blast/
+#BLAST identity calculation: https://www.biorxiv.org/content/biorxiv/suppl/2018/06/16/214288.DC2/214288-7.pdf
