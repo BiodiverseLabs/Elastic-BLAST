@@ -21,6 +21,9 @@ aws-create-elastic-blast-janitor-role.sh
 #Validate your query file can be read
 aws s3 ls s3://biodiverse/Input/query.fasta
 
+#Output - 2024-12-13 13:47:43     504241 soil_test.fasta
+#If there is not a line like this then your file was not found
+
 #Create a text file - Example biodiverse_eblast.ini file
 
 #Upload the text file to your Cloudshell working directory
