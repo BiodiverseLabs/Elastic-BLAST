@@ -9,7 +9,7 @@ pip install elastic-blast
 #confirm it was installed
 elastic-blast --version
 
-#autoshutdown
+#Include autoshutdown
 aws-create-elastic-blast-janitor-role.sh
 
 #Setup an Output Bucket; Confirm then make; I just go to S3
